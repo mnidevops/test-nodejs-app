@@ -15,6 +15,12 @@ pipeline {
            sh 'echo "testing application..."'
         }
       }
+     
+     stage('Scan') { 
+        steps { 
+           sh 'echo "OSS Scan application..."'
+        }
+      }
 
          stage("Deploy application") { 
          steps { 
