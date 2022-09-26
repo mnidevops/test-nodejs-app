@@ -22,9 +22,9 @@ pipeline {
      stage('Test') {
        when {
          beforeAgent true
-         anyOf {
-                branch 'prod'; branch 'release'
-                }
+        // anyOf {
+         //       branch 'prod'; branch 'release'
+         //       }
          allOf {
                 //branch 'develop'
                 expression{env.BRANCH_NAME == 'develop'}
