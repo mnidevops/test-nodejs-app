@@ -1,6 +1,7 @@
 pipeline { 
   environment {
-    week = "Sunday"
+    week = "Mon"
+    //week = sh(returnStdout: true, script: 'date +%a')
   }
    agent any
    stages {
@@ -20,6 +21,7 @@ pipeline {
      }
      
      stage('Test') {
+       //string v = 
        when {
          beforeAgent true
         // anyOf {
@@ -29,9 +31,8 @@ pipeline {
                 //branch 'develop'
                 expression{env.BRANCH_NAME == 'develop'}
                 //expression{ week[new Date()[Calendar.DAY_OF_WEEK]] == 'Sunday' }
-                string v = sh(returnStdout: true, script: 'date +%a')
-                print v
-           expression{ env.v  == 'Mon' }
+           print week
+           expression{ env.week  == 'Mon' }
                 }
               
        }
