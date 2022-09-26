@@ -4,13 +4,19 @@ pipeline {
 
    stages {
    
-     stage('Install Dependencies') { 
+      stage('Install Dependencies') { 
         steps { 
-           sh 'npm install' 
+           sh 'echo "Install dependencies" '
         }
      }
      
-     stage('Test') { 
+     stage('Test') {
+       when {
+         beforeAgent true
+         anyOf {
+           branch 'develop'; branch 'prod'
+              }
+       }
         steps { 
            sh 'echo "testing application..."'
         }
