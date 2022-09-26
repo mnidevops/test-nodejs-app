@@ -2,6 +2,7 @@ pipeline {
   environment {
     //week = "Mon"
     week = sh(returnStdout: true, script: 'date +%a')
+    
   }
    agent any
    stages {
@@ -9,6 +10,7 @@ pipeline {
       stage('Install Dependencies') { 
         steps { 
            sh 'echo "Install dependencies" '
+           sh 'echo "env.week"'
         }
      }
      
