@@ -31,7 +31,7 @@ pipeline {
                 //branch 'develop'
                 expression{env.BRANCH_NAME == 'develop'}
                 //expression{ week[new Date()[Calendar.DAY_OF_WEEK]] == 'Sunday' }
-           print week
+          
            expression{ env.week  == 'Mon' }
                 }
               
