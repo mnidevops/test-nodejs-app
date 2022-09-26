@@ -1,5 +1,7 @@
 pipeline { 
-  
+  environment {
+    week = "Sunday"
+  }
    agent any
    stages {
    
@@ -23,7 +25,8 @@ pipeline {
          anyOf {
            branch 'prod'; branch 'release'
            expression{env.BRANCH_NAME == 'develop'}
-           expression{ sh(returnStdout: true, script: 'date +%a') == 'Sun' }
+           expression{ week[new Date()[Calendar.DAY_OF_WEEK]] == 'Sunday }
+           // expression{ sh(returnStdout: true, script: 'date +%a') == 'Sun' }
               }
        }
         steps { 
