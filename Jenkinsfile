@@ -27,7 +27,7 @@ pipeline {
            allOf {
            expression{env.BRANCH_NAME == 'develop'}
            //expression{ week[new Date()[Calendar.DAY_OF_WEEK]] == 'Sunday' }
-           expression{ sh(returnStdout: true, script: 'date +%a') == 'Sun' }
+           expression{ sh(returnStdout: true, script: 'date +%a') == 'Mon' }
            }
               }
        }
