@@ -23,14 +23,15 @@ pipeline {
        when {
          beforeAgent true
          anyOf {
-           branch 'prod'; branch 'release'
-           allOf {
-             branch 'develop'
-           //expression{env.BRANCH_NAME == 'develop'}
-           //expression{ week[new Date()[Calendar.DAY_OF_WEEK]] == 'Sunday' }
-           expression{ sh(returnStdout: true, script: 'date +%a') == 'Mon' }
-           }
-              }
+                branch 'prod'; branch 'release'
+                }
+         allOf {
+                //branch 'develop'
+                expression{env.BRANCH_NAME == 'develop'}
+                //expression{ week[new Date()[Calendar.DAY_OF_WEEK]] == 'Sunday' }
+                expression{ sh(returnStdout: true, script: 'date +%a') == 'Mon' }
+                }
+              
        }
         steps { 
            sh 'echo "testing application..."'
