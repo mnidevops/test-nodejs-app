@@ -12,7 +12,7 @@ pipeline {
      stage('Test') {
        when {
          beforeAgent true
-         anyof {
+         anyOf {
            branch 'develop'; branch 'prod'
               }
        }
