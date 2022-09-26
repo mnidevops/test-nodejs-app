@@ -1,12 +1,11 @@
 pipeline { 
+  agent any
   
-   agent any
-
-   stages {
+  stages {
    
       stage('Install Dependencies') { 
         steps { 
-           sh 'echo "Install dependencies" '
+           sh 'echo "Install dependencies" 
         }
      }
      
