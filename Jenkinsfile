@@ -11,6 +11,12 @@ pipeline {
      }
      
      stage('Test') { 
+     when {
+     	beforeaAgent true
+	anyof {
+		branch 'develop'; branch 'prod'
+		}
+	}
         steps { 
            sh 'echo "testing application..."'
         }
