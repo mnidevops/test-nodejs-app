@@ -1,7 +1,7 @@
 pipeline { 
   environment {
-    week = "Mon"
-    //week = sh(returnStdout: true, script: 'date +%a')
+    //week = "Mon"
+    week = sh(returnStdout: true, script: 'date +%a')
   }
    agent any
    stages {
