@@ -1,6 +1,6 @@
 pipeline { 
   environment {
-    week = [1: 'Sunday']
+    week = "Sunday"
   }
    agent any
    stages {
