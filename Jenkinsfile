@@ -1,29 +1,33 @@
 pipeline { 
-  agent any
   
-  stages {
+   agent any
+   stages {
    
       stage('Install Dependencies') { 
         steps { 
-           sh 'echo "Install dependencies"'
+           sh 'echo "Install dependencies" '
         }
+     }
+     
+     stage('Day'){
+       steps{
+         string v = sh(returnStdout: true, script: 'date +%a')
+         print v
+         print v.trim()
+       }
      }
      
      stage('Test') {
        when {
          beforeAgent true
          anyOf {
-           branch 'develop'; branch 'prod'
+           branch 'prod'; branch 'release'
+           expression{env.BRANCH_NAME == 'develop'}
+           expression{ sh(returnStdout: true, script: 'date +%a') == 'Sun' }
               }
        }
         steps { 
            sh 'echo "testing application..."'
-        }
-      }
-     
-     stage('Scan') { 
-        steps { 
-           sh 'echo "OSS Scan application..."'
         }
       }
 
