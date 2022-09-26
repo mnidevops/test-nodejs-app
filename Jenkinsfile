@@ -10,7 +10,7 @@ pipeline {
       stage('Install Dependencies') { 
         steps { 
            sh 'echo "Install dependencies" '
-           sh 'echo "env.week"'
+          sh 'echo "${week}"'
         }
      }
      
