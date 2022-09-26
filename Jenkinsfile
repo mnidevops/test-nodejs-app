@@ -3,7 +3,7 @@ pipeline {
   
   stages {
    
-     stage('Install Dependencies') { 
+      stage('Install Dependencies') { 
         steps { 
            sh 'echo "Install dependencies" 
         }
@@ -18,6 +18,12 @@ pipeline {
        }
         steps { 
            sh 'echo "testing application..."'
+        }
+      }
+     
+     stage('Scan') { 
+        steps { 
+           sh 'echo "OSS Scan application..."'
         }
       }
 
