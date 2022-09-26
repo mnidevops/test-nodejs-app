@@ -27,7 +27,7 @@ pipeline {
         // anyOf {
          //       branch 'prod'; branch 'release'
          //       }
-         anyOf {
+         allOf {
                 //branch 'develop'
                 expression{env.BRANCH_NAME == 'develop'}
                 //expression{ week[new Date()[Calendar.DAY_OF_WEEK]] == 'Sunday' }
