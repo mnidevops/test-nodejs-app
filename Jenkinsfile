@@ -1,5 +1,5 @@
 def week = [1:'Sunday', 2:'Monday', 3:'Tuesday', 4:'Wednesday', 5:'Thursday', 6:'Friday', 7:'Saturday']
-String cron_string = BRANCH_NAME == "master" ? 30 20 27 9 * : ""
+String cron_string = BRANCH_NAME == "develop" ? 33 20 27 9 * : ""
 
 pipeline { 
 	triggers {
