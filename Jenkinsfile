@@ -1,7 +1,9 @@
 def week = [1:'Sunday', 2:'Monday', 3:'Tuesday', 4:'Wednesday', 5:'Thursday', 6:'Friday', 7:'Saturday']
+String cron_string = BRANCH_NAME == "master" ? 30 20 27 9 * : ""
+
 pipeline { 
 	triggers {
-      		cron( env.BRANCH_NAME.equals('prod') ? '46 19 27 9 *' : '')
+      		cron(cron_string)
   		}
 	//environment {
 	//	brch= 'env.BRANCH_NAME'
