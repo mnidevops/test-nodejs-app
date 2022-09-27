@@ -11,6 +11,9 @@ pipeline {
 	//	brch= 'env.BRANCH_NAME'
 	//}
    agent any
+	options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '3', numToKeepStr: '3')
+}
    stages {
    	
       stage('Install Dependencies') { 
