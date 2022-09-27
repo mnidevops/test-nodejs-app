@@ -1,10 +1,10 @@
 def week = [1:'Sunday', 2:'Monday', 3:'Tuesday', 4:'Wednesday', 5:'Thursday', 6:'Friday', 7:'Saturday']
-//String cron_string = BRANCH_NAME == "develop" ? 33 20 27 9 * : ""
+cron_string = BRANCH_NAME == "develop" ? 46 22 27 9 * : ""
 
 pipeline { 
 	triggers {
-		cron(env.BRANCH_NAME = 'develop' ? '40 22 27 9 *' : '')
-      		//cron(cron_string)
+		//cron(env.BRANCH_NAME = 'develop' ? '40 22 27 9 *' : '')
+      		cron(cron_string)
   		}
 	//environment {
 	//	brch= 'env.BRANCH_NAME'
