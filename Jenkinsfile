@@ -1,7 +1,7 @@
 def week = [1:'Sunday', 2:'Monday', 3:'Tuesday', 4:'Wednesday', 5:'Thursday', 6:'Friday', 7:'Saturday']
 pipeline { 
 	triggers {
-      		cron( env.BRANCH_NAME.equals('develop') ? '30 5 27 9 *' : '')
+      		cron( env.BRANCH_NAME.equals('develop') ? '34 19 27 9 *' : '')
   		}
 	//environment {
 	//	brch= 'env.BRANCH_NAME'
