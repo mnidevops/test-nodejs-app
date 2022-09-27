@@ -1,15 +1,15 @@
 def week = [1:'Sunday', 2:'Monday', 3:'Tuesday', 4:'Wednesday', 5:'Thursday', 6:'Friday', 7:'Saturday']
 pipeline { 
-	environment {
-		brch= 'env.BRANCH_NAME'
-	}
+	//environment {
+	//	brch= 'env.BRANCH_NAME'
+	//}
    agent any
    stages {
    	
       stage('Install Dependencies') { 
         steps { 
-           sh 'echo "Install dependencies" '
-		sh 'echo "${brch}"'
+           	sh 'echo "Install dependencies" '
+		sh 'echo "Barnch is:" + env.BRANCH_NAME 
         }
      }
      
