@@ -3,7 +3,7 @@ def week = [1:'Sunday', 2:'Monday', 3:'Tuesday', 4:'Wednesday', 5:'Thursday', 6:
 
 pipeline { 
 	triggers {
-		cron(env.BRANCH_NAME == 'develop' ? '50 22 27 9 *' : '')
+		cron(env.BRANCH_NAME == 'develop' ? '4 * * * *' : '')
 		//cron(env.BRANCH_NAME = 'develop' ? '40 22 27 9 *' : '')
       		//cron(cron_string)
   		}
