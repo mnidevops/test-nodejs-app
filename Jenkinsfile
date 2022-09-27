@@ -1,5 +1,6 @@
+def week = [1:'Sunday', 2:'Monday', 3:'Tuesday', 4:'Wednesday', 5:'Thursday', 6:'Friday', 7:'Saturday']
 pipeline { 
-	def week = [1:'Sunday', 2:'Monday', 3:'Tuesday', 4:'Wednesday', 5:'Thursday', 6:'Friday', 7:'Saturday']
+	
   //environment {
     //week = "Mon"
   //  week = sh(returnStdout: true, script: 'date +%a')
