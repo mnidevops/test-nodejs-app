@@ -10,7 +10,7 @@ pipeline {
         steps { 
            	sh 'echo "Install dependencies" '
 		//sh 'printenv'
-		sh 'echo "Barnch is:" env.BRANCH_NAME'
+		sh 'echo "Barnch is:" ${env.BRANCH_NAME}'
         }
      }
      
