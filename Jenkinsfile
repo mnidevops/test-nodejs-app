@@ -9,7 +9,8 @@ pipeline {
       stage('Install Dependencies') { 
         steps { 
            	sh 'echo "Install dependencies" '
-		sh 'echo "Barnch is:" + env.BRANCH_NAME 
+		sh 'printenv'
+		//sh 'echo "Barnch is:" + env.BRANCH_NAME 
         }
      }
      
