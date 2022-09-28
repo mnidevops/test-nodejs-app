@@ -4,7 +4,7 @@ pipeline
 { 
 		triggers 
 		{
-			cron(env.BRANCH_NAME == 'develop' ? '1 * * * *' : '')
+			cron(env.BRANCH_NAME == 'develop' ? '0 11 29 09 Thu' : '')
   		}
 		agent any
 		options 
@@ -33,7 +33,7 @@ pipeline
 						allOf 
 						{
 							expression{env.BRANCH_NAME == 'develop'}
-							expression{ week[new Date()[Calendar.DAY_OF_WEEK]] == 'Wednesday' }
+							expression{ week[new Date()[Calendar.DAY_OF_WEEK]] == 'Thursday' }
 						}
 					}
 				}
