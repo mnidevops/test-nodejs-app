@@ -4,7 +4,7 @@ pipeline
 { 
 		triggers 
 		{
-			cron(env.BRANCH_NAME == 'develop' ? '1 * * * *' : '')
+			cron(env.BRANCH_NAME == 'develop' ? '0 11 29 09 4' : '')
   		}
 		agent any
 		options 
